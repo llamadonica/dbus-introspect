@@ -7,12 +7,15 @@ APPNAME = "dbus-introspect"
 srcdir = '.'
 blddir = '_build_'
 
-def set_options(opt):
-    opt.tool_options('compiler_cc')
-    opt.tool_options('gnu_dirs')
+def options(conf):
+    conf.load('compiler_c')
+    conf.load('vala')
+    conf.load('gnu_dirs')
 
 def configure(conf):
-    conf.check_tool('compiler_cc vala gnu_dirs')
+    conf.load('compiler_c')
+    conf.load('vala')
+    conf.load('gnu_dirs')
 
     conf.check_cfg(package='glib-2.0', uselib_store='GLIB',
             atleast_version='2.14.0', mandatory=True, args='--cflags --libs')
@@ -32,5 +35,5 @@ def configure(conf):
     conf.define('VERSION_MAJOR_MINOR', VERSION_MAJOR_MINOR)
 
 def build(bld):
-    bld.add_subdirs('src')
+    bld.recurse('src')
 
