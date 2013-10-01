@@ -1,0 +1,16 @@
+Source: dbus-introspect
+Section: unknown
+Priority: extra
+Maintainer: Adam Stark <llamadonica@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libglib2.0-dev, libdbus-1-dev
+Standards-Version: 3.9.4
+Homepage: https://github.com/llamadonica/dbus-introspect
+Vcs-Git: git://github.com/llamadonica/dbus-introspect.git
+Vcs-Browser: https://github.com/llamadonica/dbus-introspect
+
+Package: dbus-introspect
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: DBus interface introspecter
+ Command line utility to print introspection information for
+ DBus addresses. To be used with the vala-dbus-binding-tool.
