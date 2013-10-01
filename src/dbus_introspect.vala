@@ -86,7 +86,7 @@ public class Main : GLib.Object
 				stderr.printf( "You must specify an address.\n%s",optParse.get_help(false,null)) ;
 				return 1;
 			}
-			if (args.length < 3) {
+			if (args.length < 3) {dbus-1
 				stderr.printf( "You must specify an object path.\n%s",optParse.get_help(false,null)) ;
 				return 1;
 			}
